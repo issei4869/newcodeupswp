@@ -1,0 +1,244 @@
+@use 'foundation' as *;
+
+.p-contact__contents{
+
+}
+
+.p-contact__content{
+  @include mq('md'){
+    // display: flex;
+    // align-items: center;
+  }
+}
+
+.p-contact__head{
+  width: prem(250);
+}
+
+.p-contact__item{
+  margin-top: prem(6);
+}
+
+.p-contact__item-example {
+  margin-top: prem(6);
+  color: gray;
+}
+
+// 必須
+.p-contact__required{
+  color: red;
+  padding-left: 1em;
+}
+
+.p-contact__policy,
+.p-contact__content,
+.p-contact__btn {
+  margin: prem(24) 0;
+}
+
+.p-contact__policy-link {
+  color: blue;
+  transition: all 0.3s;
+}
+
+.p-contact__btn-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include mq(md){
+    flex-direction: row;
+    gap: prem(40);
+  }
+
+}
+.p-contact__btn {
+  display: inline-block;
+  text-align: center;
+}
+
+.p-contact__item-text,
+.p-contact__item-tel,
+.p-contact__item-email,
+.p-contact__item-textarea,
+.p-contact__item-select {
+  margin: 0;
+  padding: 0.8em;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 0;
+  outline: none;
+  background: none;
+  background-color: transparent;
+  font-size: prem(16);
+  color: inherit;
+  font-family: inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
+.p-contact__item-text:focus,
+.p-contact__item-tel:focus,
+.p-contact__item-email:focus,
+.p-contact__item-textarea:focus,
+.p-contact__item-select:focus {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: none;
+  outline: none;
+}
+
+.p-contact__item-text {}
+.p-contact__item-tel {}
+.p-contact__item-email {}
+
+.p-contact__item-textarea {
+  height: 200px;
+  resize: none;
+  overflow: auto;
+
+}
+.p-contact__item-message {
+  white-space: pre-wrap;
+}
+.p-contact__item-select {
+    padding-right: 3em;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALJJREFUeNrslssNgCAQRCmB0ijBEuyEEijBEijBEizBEnAPy0UBWVj8JDvJJB5w3gsXVUoikXwsBrpAPdRCNcOmxi2P2yZ3cIKGU9dOCY0b590pdXhPHOyRyMEDsi4JhVIlSvBYTRGgSNTAQ+pFyyBRC7e5AdchUQt3d1fYIsEGb5Fgh1MktlFwisQwOIeE4/pGuDfhLRLscIrEMHiNxHB4SeIxeMyMPxkenyUSyT9zCDAAj5btZ4c3zaUAAAAASUVORK5CYII=");
+    background-repeat: no-repeat;
+    background-size: 1em;
+    background-position: right 0.5em center;
+    color: inherit;
+}
+.p-contact__item-select:invalid {
+  color: rgba(0, 0, 0, 0.32)
+}
+
+.p-contact__item-select select::-ms-expand {
+  display: none;
+}
+
+.p-contact__item-radio input[type="radio"],
+.p-contact__item-checkbox input[type="checkbox"]{
+  // タブキーでもカーソルが当たるようdisplay:none;ではなく、opacity:0,position: absoluteで対応
+  opacity: 0;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.p-contact__item-radio input[type="radio"] +span,
+.p-contact__item-checkbox input[type="checkbox"] +span {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5em 1em 0.5em 1.5em;
+  color: #333;
+  font-size: prem(16);
+}
+// ラジオボタンとチェックボックスにフォーカスした場合
+//　必要ない場合は削除
+.p-contact__item-radio input[type="radio"]:focus +span,
+.p-contact__item-checkbox input[type="checkbox"]:focus + span{
+  opacity: 0.7;
+}
+
+.p-contact__item-radio input[type="radio"] + span::before,
+.p-contact__item-checkbox input[type="checkbox"] + span::before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 1em;
+	height: 1em;
+	content: "";
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid black;
+}
+.p-contact__item-checkbox input[type="checkbox"]:checked+span::before {
+  background: #333;
+}
+
+.p-contact__item-radio input[type="radio"]:checked+span::before {
+  background: white;
+}
+
+.p-contact__item-radio input[type="radio"]+span::before{
+  border-radius: 50%;
+}
+
+.p-contact__item-radio input[type="radio"]+span::after {
+  position: absolute;
+  content: "";
+  background: #333;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  height: 0.5em;
+  left: 0.25em;
+  opacity: 0;
+  padding: 0.125em;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease 0s;
+  width: 0.5em;
+}
+
+.p-contact__item-checkbox input[type="checkbox"]+span::after {
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  content: "";
+  display: block;
+  height: 0.35em;
+  left: 0.15em;
+  margin-top: -0.1em;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: all 0.3s ease 0s;
+  width: 0.8em;
+}
+
+.p-contact__item-checkbox input[type="checkbox"]:checked+span::after,
+.p-contact__item-radio input[type="radio"]:checked+span::after {
+  opacity: 1;
+}
+
+/* button */
+.p-contact__btn input[type="submit"],
+.p-contact__btn input[type="button"] {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5em 2em;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  background: rgba(0,0,0,0.32);
+  color: #333;
+  appearance: button;
+  cursor: pointer;
+  font-size: prem(16);
+  border-radius: 0;
+  // border: 1px solid #333;
+  border: none;
+  transition: all 0.3s;
+}
+
+.p-contact__btn input[type="submit"]:hover,
+.p-contact__btn input[type="button"]:hover,
+.p-contact__btn input[type="submit"]:focus,
+.p-contact__btn input[type="button"]:focus {
+  outline: none;
+  opacity: 0.7;
+}
+
+.p-contact__item-radio{}
+.p-contact__item-checkbox{}
+
+.p-contact__item,
+.p-contact__btn-submit
+ {
+  min-width: prem(150);
+}
+
+//送信ボタンを中央にするため、loadingアニメーションの位置を調整
+.wpcf7-spinner {
+  position: absolute;
+}
