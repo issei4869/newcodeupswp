@@ -87,11 +87,32 @@ function change_posts_per_page( $query ) {
   if ( $query->is_post_type_archive('campaign'))  { //カスタム投稿タイプを指定
     $query->set( 'posts_per_page', 4 ); // 表示件数を4件に設定
   }
+  if ( $query->is_tax('campaign'))  { //カスタム投稿タイプを指定
+    $query->set( 'posts_per_page', 4 ); // 表示件数を4件に設定
+  }
   if ( $query->is_post_type_archive('voice'))  { //カスタム投稿タイプを指定
     $query->set( 'posts_per_page', 6 ); // 表示件数を6件に設定
   }
+  
 }
 add_action( 'pre_get_posts', 'change_posts_per_page' );
+
+/* ---------- 「カスタムタクソノミー」の表記変更 ---------- */
+function my_pre_get_taxonomy_archive( $query ) {
+  if ( is_admin() || !$query->is_main_query() ) 
+    return;
+  // if ( $query->is_archive(arry('campaign', 'voice')) ) { //カスタム投稿タイプを指定
+  //     $query->set( 'posts_per_page', 4 ); // 表示件数を4件に設定
+  // }
+  if ( $query->is_tax('campaign_category'))  { //カスタム投稿タイプを指定
+    $query->set( 'posts_per_page', 4 ); // 表示件数を4件に設定
+  }
+  if ( $query->is_tax('voice_category'))  { //カスタム投稿タイプを指定
+    $query->set( 'posts_per_page', 6 ); // 表示件数を6件に設定
+  }
+  
+}
+add_action( 'pre_get_posts', 'my_pre_get_taxonomy_archive' );
 
 
 SCF::add_options_page('', '私たちについて', 'edit_posts', 'aboutus_options', NULL, '5');

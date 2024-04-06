@@ -26,15 +26,15 @@
             <li class="nav-items__item nav-items__item--sitemap">
               <a href="<?php echo esc_url( home_url( '/campaign/' ) )?>"><span>キャンペーン</span></a>
             </li>
-            <li class="nav-items__item nav-items__item--sitemap">
+            <!-- <li class="nav-items__item nav-items__item--sitemap"> -->
               <?php
                 $terms = get_terms('campaign_category');
                 foreach ( $terms as $term ) {
                   //var_dump(get_term_link($term));
-                  echo '<a class="js-link-menu" href="'.get_term_link($term).'">'.esc_html($term->name).'</a>';
+                  echo '<li class="nav-items__item nav-items__item--sitemap"><a class="js-link-menu" href="'.get_term_link($term).'">'.esc_html($term->name).'</a></li>';
                 }
               ?>
-            </li>
+            <!-- </li> -->
             <li class="nav-items__item nav-items__item--sitemap">
               <a href="<?php echo esc_url( home_url( '/about-us/' ) )?>"><span>私たちについて</span></a>
             </li>
@@ -87,6 +87,9 @@
             </li>
             <li class="nav-items__item nav-items__item--sitemap">
               <a href="<?php echo esc_url( home_url( '/contact/' ) )?>"><span>お問合せ</span></a>
+            </li>
+            <li class="nav-items__item nav-items__item--sitemap">
+            <a href="<?php echo esc_url( home_url( '/sitemap/' ) )?>"><span>サイトマップ</span></a>
             </li>
           </ul>
         </div>

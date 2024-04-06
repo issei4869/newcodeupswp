@@ -28,7 +28,7 @@
               while ( have_posts() ) :
                 the_post(); ?> 
                   <li class="blog-list__item blog-card">
-                    <a href="#">
+                    <a href="<?php the_permalink(); ?>">
                       <div class="blog-card__img">
                         <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
                       </div>

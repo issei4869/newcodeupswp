@@ -65,7 +65,7 @@
               </div>
             </div>
             <!-- 下のテキスト -->
-            <div class="voice-card__text"><?php the_content(); ?></div>
+            <div class="voice-card__text"><?php echo wp_trim_words( get_the_content(), 169, '' ); ?></div>
           </li>
         <?php endwhile; endif; ?>
       </ul>

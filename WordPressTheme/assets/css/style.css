@@ -1313,7 +1313,7 @@ a {
 	color: #fff;
 	cursor: pointer;
 	line-height: 1.4375;
-	padding: 1rem;
+	padding: 1rem 2.75rem 1rem 1rem;
 	position: relative;
 }
 
@@ -2381,7 +2381,7 @@ a {
 }
 
 .single-blog__img,
-.single-blog__content div {
+.single-blog__content figure {
 	margin-top: 1.5rem;
 	width: 100%;
 }
@@ -3438,7 +3438,7 @@ html {
 
 .faq-list__item-question {
 	font-size: 1.25rem;
-	padding: 1.625rem 2.5rem;
+	padding: 1.625rem 6rem 1.625rem 2.5rem;
 }
 
 .faq-list__item-question::before,
@@ -3818,7 +3818,7 @@ html {
 }
 
 .single-blog__img,
-.single-blog__content div {
+.single-blog__content figure {
 	margin-top: 2.5rem;
 }
 

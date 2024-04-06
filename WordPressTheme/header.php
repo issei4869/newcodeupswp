@@ -122,6 +122,9 @@
                   <li class="nav-items__item">
                     <a href="<?php echo esc_url( home_url( '/contact/' ) )?>"><span>お問合せ</span></a>
                   </li>
+                  <li class="nav-items__item">
+                    <a href="<?php echo esc_url( home_url( '/sitemap/' ) )?>"><span>サイトマップ</span></a>
+                  </li>
                 </ul>
               </div>
             </div>

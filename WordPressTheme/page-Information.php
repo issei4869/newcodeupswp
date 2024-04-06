@@ -12,7 +12,6 @@
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-information-mv1_sp.jpg" alt="ダイビングの画像">
         </picture>
       </div>
-      <!-- aaaaaaaaaaaaaaaaaa -->
     </div>
   </section>
 

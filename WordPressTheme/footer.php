@@ -59,10 +59,10 @@
             </a>
           </div>
           <div class="footer__sns">
-            <a class="footer__sns-icon" href="#" target="_blank" rel="noopener">
+            <a class="footer__sns-icon" href="https://www.facebook.com" target="_blank" rel="noopener">
               <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/facebookLogo.svg" alt="Facebookのアイコン">
             </a>
-            <a class="footer__sns-icon" href="#" target="_blank" rel="noopener">
+            <a class="footer__sns-icon" href="https://www.instagram.com" target="_blank" rel="noopener">
               <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/instagramLogo.svg" alt="インスタグラムのアイコン">
             </a>
           </div>
@@ -121,6 +121,9 @@
               <li class="nav-items__item">
                 <a href="<?php echo esc_url( home_url( '/price/' ) )?>#sub-price3">ファンダイビング</a>
               </li>
+              <li class="nav-items__item">
+                <a href="<?php echo esc_url( home_url( '/price/' ) )?>#sub-price4">スペシャルダイビング</a>
+              </li>
             </ul>   
             <ul class="nav-list__items nav-items">
               <li class="nav-items__item">
@@ -135,6 +138,9 @@
               <li class="nav-items__item">
                 <a href="<?php echo esc_url( home_url( '/contact/' ) )?>"><span>お問合せ</span></a>
               </li>
+              <li class="nav-items__item">
+                <a href="<?php echo esc_url( home_url( '/sitemap/' ) )?>"><span>サイトマップ</span></a>
+              </li>
             </ul>
           </div>
         </div>
@@ -142,7 +148,7 @@
       <small class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</small>
     </div>
   </footer>
-  <div class="page-top" id="page-topbtn"><a href=""><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/totop.png" alt="上にスクロールするボタン"></a></div>
+  <div class="page-top" id="page-topbtn"><a href="#"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/totop.png" alt="上にスクロールするボタン"></a></div>
   <!-- functions.phpを読み込むために必要 -->
   <?php wp_footer(); ?>
   <?php if (is_404()){ echo '</div>'; }; ?>

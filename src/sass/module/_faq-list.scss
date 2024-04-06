@@ -9,14 +9,14 @@
 }
 
 .faq-list__item-question {
-  padding: rem(16);
+  padding: rem(16) rem(44) rem(16) rem(16);
   line-height: calc(23 / 16);
   position: relative;
   background-color: $accent-color;
   color: $base-color;
   cursor: pointer;
   @include mq(md){
-    padding: rem(26) rem(40);
+    padding: rem(26) rem(96) rem(26) rem(40);
     font-size: rem(20);
   }
 }

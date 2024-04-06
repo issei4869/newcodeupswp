@@ -57,7 +57,7 @@
         <?php $recent_query = new WP_Query(
             array(
               'post_type' => 'voice',
-              'posts_per_page' => 2,
+              'posts_per_page' => 1,
               'orderby' => 'date',
               'order' => 'DESC',
             )
@@ -106,7 +106,7 @@
           <?php $recent_query = new WP_Query(
             array(
               'post_type' => 'campaign',
-              'posts_per_page' => 1,
+              'posts_per_page' => 2,
               'orderby' => 'date',
               'order' => 'DESC',
             )

@@ -39,7 +39,7 @@
         </caption>
         <tbody>
           <tr>
-            <th rowspan="4" class="sub-price-list__head u-desktop">
+            <th rowspan="1000" class="sub-price-list__head u-desktop">
               <div class="sub-price-list__wrapper">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
@@ -85,7 +85,7 @@
         </caption>
         <tbody>
           <tr class="sub-price-list__head">
-            <th rowspan="5" class="sub-price-list__head u-desktop">
+            <th rowspan="1000" class="sub-price-list__head u-desktop">
               <div class="sub-price-list__wrapper">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
@@ -131,7 +131,7 @@
         </caption>
         <tbody>
           <tr class="sub-price-list__head">
-            <th rowspan="5" class="sub-price-list__head u-desktop">
+            <th rowspan="1000" class="sub-price-list__head u-desktop">
               <div class="sub-price-list__wrapper">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
@@ -177,7 +177,7 @@
         </caption>
         <tbody>
           <tr class="sub-price-list__head">
-            <th rowspan="4" class="sub-price-list__head u-desktop">
+            <th rowspan="1000" class="sub-price-list__head u-desktop">
               <div class="sub-price-list__wrapper">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">

@@ -36,7 +36,7 @@
                         <time datetime="<?php the_time('c'); ?>" class="blog-card__date"><?php the_time('Y.m.d'); ?>
                         </time>
                         <p class="blog-card__title"><?php the_title(); ?></p>
-                        <p class="blog-card__text"><?php the_content(); ?></p>
+                        <p class="blog-card__text"><?php echo wp_trim_words( get_the_content(), 85, '' ); ?></p>
                       </div>
                     </a>
                   </li>

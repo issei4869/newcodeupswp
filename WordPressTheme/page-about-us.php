@@ -63,7 +63,7 @@
         $image_url = wp_get_attachment_image_src($field['gallery'] , 'full');
       ?>
         <li class="gallery-list__item js-gallery-list__item">
-          <img src="<?php echo $image_url[0]; ?>" alt="" />
+          <img src="<?php echo $image_url[0]; ?>" alt="ギャラリー画像" />
         </li>
       <?php endforeach; ?>
       </ul>
