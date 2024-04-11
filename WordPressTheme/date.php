@@ -30,7 +30,11 @@
                   <li class="blog-list__item blog-card">
                     <a href="<?php the_permalink(); ?>">
                       <div class="blog-card__img">
-                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+                        <?php if (has_post_thumbnail()) : ?>
+                          <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+                        <?php else: ?>
+                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/noimage.png" alt="NOIMAGE表示">
+                        <?php endif; ?>
                       </div>
                       <div class="blog-card__meta">
                         <time datetime="<?php the_time('c'); ?>" class="blog-card__date"><?php the_time('Y.m.d'); ?>

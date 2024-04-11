@@ -21,17 +21,22 @@
   <!-- アコーディオン実装 -->
   <div class="layout-faq faq fish">
     <div class="faq__inner inner">
-      <ul class="faq__list faq-list">
-        <?php
-          $faq = SCF::get_option_meta('faq_options', 'faq');
-          foreach ($faq as $field):
-            $question = esc_html($field['question']);
-            $answer = esc_html($field['answer']);
-            echo '<li class="faq-list__item">' . '<p class="faq-list__item-question js-faq-question">' . $question  . '</p>';
-            echo '<p class="faq-list__item-answer">' . $answer . '</p>' . '</li>';
-            ?>                    
-        <?php endforeach; ?>
-      </ul>
+      <?php 
+        $faq = SCF::get_option_meta('faq_options', 'faq');
+      ?>
+      <?php if (!empty($faq)) : ?>
+        <ul class="faq__list faq-list">
+          <?php
+            // $faq = SCF::get_option_meta('faq_options', 'faq');
+            foreach ($faq as $field):
+              $question = esc_html($field['question']);
+              $answer = esc_html($field['answer']);
+              echo '<li class="faq-list__item">' . '<p class="faq-list__item-question js-faq-question">' . $question  . '</p>';
+              echo '<p class="faq-list__item-answer">' . $answer . '</p>' . '</li>';
+              ?>                    
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
     </div>
   </div>
 <?php get_footer(); ?>

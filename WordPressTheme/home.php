@@ -22,32 +22,41 @@
     <div class="layout-sub-blog sub-blog fish">
 		  <div class="sub-blog__inner inner">
         <div class="sub-blog__wrapper">
+        <?php if ( have_posts() ) : ?>
           <ul class="blog-list blog-list--sub">
             <!-- ループ -->
-            <?php if ( have_posts() ) : 
-              while ( have_posts() ) :
+            <?php while ( have_posts() ) :
                 the_post(); ?> 
-                  <li class="blog-list__item blog-card">
+                <li class="blog-list__item blog-card">
                     <a href="<?php the_permalink(); ?>">
-                      <div class="blog-card__img">
-                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
-                      </div>
-                      <div class="blog-card__meta">
-                        <time datetime="<?php the_time('c'); ?>" class="blog-card__date"><?php the_time('Y.m.d'); ?>
-                        </time>
-                        <p class="blog-card__title"><?php the_title(); ?></p>
-                        <p class="blog-card__text"><?php echo wp_trim_words( get_the_content(), 85, '' ); ?></p>
-                      </div>
+                        <div class="blog-card__img">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+                            <?php else: ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/noimage.png" alt="NOIMAGE表示">
+                            <?php endif; ?>
+                        </div>
+                        <div class="blog-card__meta">
+                            <time datetime="<?php the_time('c'); ?>" class="blog-card__date"><?php the_time('Y.m.d'); ?></time>
+                            <p class="blog-card__title"><?php the_title(); ?></p>
+                            <p class="blog-card__text"><?php echo wp_trim_words( get_the_content(), 85, '' ); ?></p>
+                        </div>
                     </a>
-                  </li>
-            <?php endwhile; endif; ?>
+                </li>
+            <?php endwhile; ?>
           </ul>
+        <?php else : ?>
+          <p class="no-post">投稿が見つかりませんでした</p>
+        <?php endif; ?>
+
           <!-- ページネーションボタン（共通パーツ） -->
           <div class="blog-list__pagenavi pagenavi">
             <div class="pagenavi__inner">
-              <!-- WP-PageNaviで出力される部分 ここから -->
-              <?php wp_pagenavi(); ?>
-              <!-- WP-PageNaviで出力される部分 ここまで -->
+              <div class="sub-blog__sidebar">
+                <!-- WP-PageNaviで出力される部分 ここから -->
+                <?php wp_pagenavi(); ?>
+                <!-- WP-PageNaviで出力される部分 ここまで -->
+              </div>
             </div>
           </div>
         </div>

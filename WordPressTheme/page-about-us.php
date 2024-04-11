@@ -51,24 +51,29 @@
   <!-- ギャラリー -->
   <div class="layout-gallery gallery">
     <div class="gallery__inner inner">
+      <?php 
+        $fields = SCF::get_option_meta('aboutus_options', 'aboutus');
+      ?>
+      <?php if (!empty($fields)) : ?>
         <!-- セクションタイトルの共通パーツ -->
         <div class="gallery__title section-header">
-        <div class="section-header__title"> Gallery</div>
-        <h2 class="section-header__subtitle">フォト</h2>
-      </div>
-      <ul class="gallery__list gallery-list">
-      <?php
-        $fields = SCF::get_option_meta('aboutus_options', 'aboutus');
-        foreach ($fields as $field):
-        $image_url = wp_get_attachment_image_src($field['gallery'] , 'full');
-      ?>
-        <li class="gallery-list__item js-gallery-list__item">
-          <img src="<?php echo $image_url[0]; ?>" alt="ギャラリー画像" />
-        </li>
-      <?php endforeach; ?>
-      </ul>
-      <!-- コース画像のモーダル時のグレー背景 -->
-      <div id="grayDisplay"></div>
+          <div class="section-header__title"> Gallery</div>
+          <h2 class="section-header__subtitle">フォト</h2>
+        </div>
+        <ul class="gallery__list gallery-list">
+        <?php
+          // $fields = SCF::get_option_meta('aboutus_options', 'aboutus');
+          foreach ($fields as $field):
+          $image_url = wp_get_attachment_image_src($field['gallery'] , 'full');
+        ?>
+          <li class="gallery-list__item js-gallery-list__item">
+            <img src="<?php echo $image_url[0]; ?>" alt="ギャラリー画像" />
+          </li>
+        <?php endforeach; ?>
+        </ul>
+        <!-- コース画像のモーダル時のグレー背景 -->
+        <div id="grayDisplay"></div>
+      <?php endif; ?>
     </div>
   </div>
 

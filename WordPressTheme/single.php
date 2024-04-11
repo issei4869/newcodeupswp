@@ -31,7 +31,11 @@
             <p class="single-blog__title"><?php the_title(); ?></p>
           </div>
           <div class="single-blog__img">
-            <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+            <?php if (has_post_thumbnail()) : ?>
+              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+            <?php else: ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/noimage.png" alt="NOIMAGE表示">
+            <?php endif; ?>
           </div>
           <!-- ループ -->
           <div class="single-blog__content">
@@ -75,7 +79,9 @@
           </div>
         </div>
         <!-- サイドバー -->
-        <?php get_sidebar(); ?>
+        <div class="sub-blog__sidebar">
+          <?php get_sidebar(); ?>
+        </div>
       </div>
     </div>
   <?php endwhile; endif; ?>

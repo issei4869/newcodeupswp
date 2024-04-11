@@ -17,6 +17,12 @@
   }
 }
 
+.sub-price-list__head.u-desktop {
+  @include mq('md') {
+    display: table-cell;
+  }
+}
+
 .sub-price-list__wrapper {
   display: flex;
   gap: rem(8);
@@ -42,11 +48,15 @@
   }
 }
 
-.sub-price-list__head.u-desktop {
+.sub-price-list__wrapper img {
+  width: rem(24);
+  height: rem(24);
   @include mq('md') {
-    display: table-cell;
+    width: rem(64);
+    height: rem(64);
   }
 }
+
 
 .sub-price-list__text,
 .sub-price-list__yen {
