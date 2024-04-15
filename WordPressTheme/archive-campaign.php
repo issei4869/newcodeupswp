@@ -69,18 +69,14 @@
                     $period_group = get_field('period_group');
                   ?>
                   <div class="campaign-card__price campaign-card__price--sub">
-                    <?php if($price_group['general_price']) : ?>
+                    <?php if($price_group) : ?>
                       <div class="campaign-card__false">
-                        <span>¥<?php echo $price_group['general_price']; ?></span>
+                        <span><?php echo $price_group['general_price']; ?></span>
+                      </div>
+                      <div class="campaign-card__true">
+                        <span><?php echo $price_group['campaign_price']; ?></span>
                       </div>
                     <?php endif; ?>
-                    <div class="campaign-card__true">
-                      <?php if($price_group['campaign_price']) : ?>
-                        <span>¥<?php echo $price_group['campaign_price']; ?></span>
-                      <?php else : ?>
-                        <span>価格検討中</span>
-                      <?php endif; ?>
-                    </div>
                   </div>
                 </div>
                 <!-- 下層ページに追加 -->

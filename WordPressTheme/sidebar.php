@@ -66,8 +66,7 @@
             'order' => 'DESC',
             )
             );
-        ?>
-            
+        ?>           
         <?php if ($recent_query->have_posts()) : ?>
           <?php while($recent_query->have_posts()) : ?>
             <?php $recent_query->the_post(); ?>
@@ -81,8 +80,15 @@
                 </div>
                 <div class="blog-sidebar-review__content">
                   <!-- 年齢とカテゴリー -->
+                  <?php 
+                    $voice_group = get_field('voice_group');
+                  ?>
                   <div class="blog-sidebar-review__meta">
-                    <div class="blog-sidebar-review__age"><?php the_field('voice_age'); ?><?php the_field('voice_gender'); ?></div>
+                    <?php if($voice_group) : ?>
+                      <div class="voice-card__age">
+                        <?php echo $voice_group['voice_age']; ?><?php echo $voice_group['voice_gender']; ?>
+                      </div>
+                    <?php endif; ?>
                   </div>
                   <!-- タイトル -->
                   <div class="blog-sidebar-review__title"><?php the_title(); ?></div>
@@ -140,13 +146,19 @@
                       <div class="campaign-card__subtitle campaign-card__subtitle--sidebar">
                         全部コミコミ(お一人様)
                       </div>
+                      <?php 
+                        $price_group = get_field('price_group');
+                        $period_group = get_field('period_group');
+                      ?>
                       <div class="campaign-card__price">
-                        <div class="campaign-card__false campaign-card__false--sidebar">
-                          <span><?php the_field('general_price'); ?></span>
-                        </div>
-                        <div class="campaign-card__true campaign-card__true--sidebar">
-                          <span><?php the_field('campaign_price'); ?></span>
-                        </div>
+                        <?php if($price_group) : ?>
+                          <div class="campaign-card__false">
+                            <span><?php echo $price_group['general_price']; ?></span>
+                          </div>
+                          <div class="campaign-card__true">
+                            <span><?php echo $price_group['campaign_price']; ?></span>
+                          </div>
+                        <?php endif; ?>
                       </div>
                     </div>
                   </div>
