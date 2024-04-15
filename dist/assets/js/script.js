@@ -385,12 +385,3 @@ $("#grayDisplay").click(function () {
   $("#grayDisplay").fadeOut(200);
   return false;
 });
-
-// 'sub-price-list__text' クラスを持つ要素を取得
-var subPriceListTextElements = document.querySelectorAll('.sub-price-list__text');
-
-// 'sub-price-list__head' クラスを持つ th 要素を取得
-var subPriceListHeadElement = document.querySelector('.sub-price-list__head');
-
-// sub-price-list__text の数に 1 を加えた値を取得して rowspan に設定
-subPriceListHeadElement.setAttribute('rowspan', subPriceListTextElements.length);

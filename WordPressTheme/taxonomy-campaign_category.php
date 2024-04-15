@@ -69,15 +69,19 @@
                   <div class="campaign-card__subtitle">
                     全部コミコミ(お一人様)
                   </div>
+                  <?php 
+                    $price_group = get_field('price_group');
+                    $period_group = get_field('period_group');
+                  ?>
                   <div class="campaign-card__price campaign-card__price--sub">
-                    <?php if(get_field('general_price')) : ?>
+                    <?php if($price_group['general_price']) : ?>
                       <div class="campaign-card__false">
-                        <span><?php the_field('general_price'); ?></span>
+                        <span>¥<?php echo $price_group['general_price']; ?></span>
                       </div>
                     <?php endif; ?>
                     <div class="campaign-card__true">
-                      <?php if(get_field('campaign_price')) : ?>
-                        <span><?php the_field('campaign_price'); ?></span>
+                      <?php if($price_group['campaign_price']) : ?>
+                        <span>¥<?php echo $price_group['campaign_price']; ?></span>
                       <?php else : ?>
                         <span>価格検討中</span>
                       <?php endif; ?>
@@ -87,7 +91,9 @@
                 <!-- 下層ページに追加 -->
                 <div class="campaign-card__sub">
                   <div class="campaign-card__text">
-                    <?php the_content(); ?>
+                    <?php if(get_field('campaign_text')) : ?>
+                      <?php the_field('campaign_text'); ?>
+                    <?php endif; ?>
                   </div>
                   <?php if(get_field('campaign_period')) : ?>
                     <div class="campaign-card__date">

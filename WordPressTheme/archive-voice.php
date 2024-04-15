@@ -45,10 +45,14 @@
                 <!--左側のコンテンツ -->
                 <div class="voice-card__content">
                   <!-- 年齢とカテゴリー -->
+                  <?php 
+                    $voice_group = get_field('voice_group');
+                    $voice_text = get_field("voice_text");
+                  ?>
                   <div class="voice-card__meta">
-                    <?php if(get_field('voice_age') || get_field('voice_gender')) : ?>
+                    <?php if($voice_group) : ?>
                       <div class="voice-card__age">
-                        <?php the_field('voice_age'); ?><?php the_field('voice_gender'); ?>
+                        <?php echo $voice_group['voice_age']; ?><?php echo $voice_group['voice_gender']; ?>
                       </div>
                     <?php endif; ?>
                     <?php
@@ -73,7 +77,15 @@
                 </div>
               </div>
               <!-- 下のテキスト -->
-              <div class="voice-card__text"><?php echo wp_trim_words( get_the_content(), 169, '' ); ?></div>
+              <?php if(get_field('voice_text')) : ?>
+                <div class="voice-card__text">
+                  <?php if (mb_strlen($voice_text) > 169) : ?>
+                    <?php echo mb_substr($voice_text, 0, 169, 'UTF-8') . '...'; ?>
+                  <?php else : ?> 
+                    <?php echo $voice_text; ?>
+                  <?php endif; ?>
+                </div>
+              <?php endif; ?>
             </li>
           <?php endwhile; ?>
         </ul>

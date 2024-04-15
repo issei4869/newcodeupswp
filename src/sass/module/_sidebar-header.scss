@@ -24,17 +24,12 @@
 }
 
 .sidebar-header__icon svg {
-  // width: rem(42);
-  // height: rem(42);
+  width: rem(42);
+  height: rem(42);
 }
 
 .sidebar-header__icon svg path {
-  // fill: $font-color;
-}
-
-.sidebar-header__icon img {
-  width: rem(42);
-  height: rem(42);
+  fill: $font-color;
 }
 
 .sidebar-header__title {
