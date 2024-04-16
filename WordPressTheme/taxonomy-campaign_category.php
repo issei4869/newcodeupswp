@@ -75,11 +75,21 @@
                   ?>
                   <div class="campaign-card__price campaign-card__price--sub">
                     <?php if($price_group) : ?>
-                      <div class="campaign-card__false">
-                        <span><?php echo $price_group['general_price']; ?></span>
-                      </div>
+                      <?php if($price_group['general_price']) : ?>
+                        <div class="campaign-card__false">
+                          <span>¥<?php echo $price_group['general_price']; ?></span>
+                        </div>
+                      <?php endif; ?>
                       <div class="campaign-card__true">
-                        <span><?php echo $price_group['campaign_price']; ?></span>
+                        <?php if($price_group['campaign_price']) : ?>
+                          <span>¥<?php echo $price_group['campaign_price']; ?></span>
+                        <?php else: ?>
+                          <span>検討中</span>
+                        <?php endif; ?>
+                      </div>
+                    <?php else: ?>
+                      <div class="campaign-card__true">
+                        <span>検討中</span>
                       </div>
                     <?php endif; ?>
                   </div>

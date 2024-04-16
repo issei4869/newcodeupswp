@@ -552,6 +552,10 @@ a {
 	padding: 0 1.5625rem;
 }
 
+.blog-sidebar__list {
+	margin-top: 5.5rem;
+}
+
 .blog-sidebar__review {
 	margin-top: 5.25rem;
 }
@@ -1346,6 +1350,23 @@ a {
 
 .faq__inner.inner {
 	max-width: 23.4375rem;
+}
+
+.file-swiper {
+	height: 100vh;
+	min-height: 25rem;
+}
+
+.file-swiper__img,
+.file-swiper__img img {
+	height: inherit;
+	min-height: inherit;
+}
+
+.file-swiper__img img {
+	-o-object-fit: cover;
+	object-fit: cover;
+	width: 100%;
 }
 
 .fish {
@@ -2202,6 +2223,10 @@ a {
 
 .nav-list__items:nth-child(2n) {
 	margin-top: 2.5rem;
+}
+
+.no-post {
+	text-align: center;
 }
 
 .page-top {
@@ -3167,6 +3192,10 @@ html {
 
 .blog-sidebar__inner--single.inner {
 	padding: 0;
+}
+
+.blog-sidebar__list {
+	margin-top: 0;
 }
 
 .blog {
