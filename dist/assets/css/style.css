@@ -2364,6 +2364,11 @@ a {
 	position: relative;
 }
 
+.sidebar-header__icon {
+	height: 2.625rem;
+	width: 2.625rem;
+}
+
 .sidebar-header__icon::before {
 	background-color: #408F95;
 	content: "";
@@ -2373,15 +2378,6 @@ a {
 	top: 50%;
 	transform: translateY(-50%);
 	width: 0.5rem;
-}
-
-.sidebar-header__icon svg {
-	height: 2.625rem;
-	width: 2.625rem;
-}
-
-.sidebar-header__icon svg path {
-	fill: #0D2936;
 }
 
 .sidebar-header__title {
@@ -2605,7 +2601,7 @@ a {
 	line-height: 1.5;
 }
 
-.sub-price-list__wrapper span svg {
+.sub-price-list__wrapper img {
 	height: 1.5rem;
 	width: 1.5rem;
 }
@@ -3983,7 +3979,7 @@ html {
 	flex-direction: column-reverse;
 }
 
-.sub-price-list__wrapper span svg {
+.sub-price-list__wrapper img {
 	height: 4rem;
 	width: 4rem;
 }

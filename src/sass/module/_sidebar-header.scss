@@ -9,7 +9,8 @@
 }
 
 .sidebar-header__icon {
-  
+  width: rem(42);
+  height: rem(42);
 }
 
 .sidebar-header__icon::before {
@@ -21,15 +22,6 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-}
-
-.sidebar-header__icon svg {
-  width: rem(42);
-  height: rem(42);
-}
-
-.sidebar-header__icon svg path {
-  fill: $font-color;
 }
 
 .sidebar-header__title {
